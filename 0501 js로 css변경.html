@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0501 스크립트,제이쿼리 방식</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+    <style>
+      div:nth-child(2) {
+        width: 100%;
+        height: 30vh;
+        background-color: blanchedalmond;
+      }
+      div:nth-child(3) {
+        width: 100%;
+        height: 30vh;
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div style="width: 100%; height: 30vh; background-color: royalblue">
+        반갑습니다<!--  -->
+      </div>
+      <div>안녕하세요</div>
+      <div>우리집</div>
+    </div>
+    <script>
+      /* 바닐라 스크립트 방식*/
+      const wrapFontColor = document.getElementById("wrap");
+      wrapFontColor.style.color = "red";
+
+      var wrapFontColor2 = document.getElementById("wrap").children;
+      console.log(wrapFontColor2);
+      wrapFontColor2[0].style.color = "#fff";
+      wrapFontColor2[1].style.color = "black";
+
+      /* .childNodes  .children 자식 선택 */
+
+      /* JQuery 방식 */
+        $("div:nth-child(3)").css({"color":"green" , "font-weight":"bold" });
+    </script>
+  </body>
+
+  <!-- 선택자
+  모든 요소 선택 document.querySelectorAll("요소")
+  ID: ("#wrap")
+  Class: (".클래스")
+  Tag: ("div")
+
+  https://lcs1245.tistory.com/entry/JavaScriptJQuery-%EC%84%A0%ED%83%9D%EC%9E%90-Selector-%EB%AA%A8%EC%9D%8C
+</html>
+
