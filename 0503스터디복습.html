@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>0503스터디복습</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .box {
+        width: 100%;
+      }
+
+      ul > li:nth-child(1) {
+        margin-top: 50px;
+      }
+
+      .li-parent {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .menu-sub {
+        display: none;
+      }
+
+      .menu-sub.active {
+        display: block;
+        width: 200px;
+        height: 100px;
+        background-color: royalblue;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="section">
+      <div class="box">
+        <ul class="li-parent">
+          <li class="menu">
+            Menu
+            <ul>
+              <li class="menu-sub">Sub Menu 1</li>
+              <li class="menu-sub">Sub Menu 2</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      const MenuBox = document.querySelector(".menu");
+      MenuBox.addEventListener("mouseenter", function (event) {});
+      MenuBox.addEventListener("mouseleave", function (event) {});
+      function MenuToggle() {
+        if (MenuBox) {
+        } else {
+        }
+      }
+
+      console.log(MenuBox);
+    </script>
+  </body>
+</html>
