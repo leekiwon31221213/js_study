@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/0501 토글버튼 실습.css" />
+    <title>0501 토글버튼 실습</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="btn__inner">
+        <label for="toggleBtn" class="swich-btn__home"></label>
+        <span class="swich-btn__toggle"></span>
+      </div>
+      <ul id="boxList">
+        <li class="box one"></li>
+        <li class="box two"></li>
+        <li class="box three"></li>
+      </ul>
+    </div>
+    <script>
+      const toggleBtn = document.querySelector(".swich-btn__toggle");
+      /* 방법2 머리가 나쁘면 몸이고생 */
+      const toggleBoxList = document.querySelectorAll(".box");
+      console.log(toggleBoxList);
+      /*  방법1 (노가다)
+      const toggleBoxBg1 = document.querySelector(".one");
+
+      const toggleBoxBg2 = document.querySelector(".two");
+
+      const toggleBoxBg3 = document.querySelector(".three"); */
+
+      toggleBtn.onclick = function () {
+        toggleBtn.classList.toggle("active");
+        /* 방법2  머리가 나쁘면 몸이고생*/
+        toggleBoxList.forEach(function (box) {
+          box.classList.toggle("active");
+        });
+      };
+      /* 방법1(노가다)
+         toggleBoxBg1.classList.toggle("active");
+        toggleBoxBg2.classList.toggle("active");
+        toggleBoxBg3.classList.toggle("active"); */
+    </script>
+  </body>
+</html>
