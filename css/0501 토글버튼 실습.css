@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+li {
+  list-style-type: none;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(2, 255, 2, 0.1);
+}
+
+.btn__inner {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.swich-btn__home {
+  width: 100px;
+  height: 50px;
+  background-color: royalblue;
+  position: relative;
+  border-radius: 30px;
+  display: block;
+  box-shadow: 0 0 16px 3px rgba(0 0 0 / 15%);
+}
+
+.swich-btn__toggle {
+  border-radius: 50%;
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+}
+
+.swich-btn__home.active {
+  background-color: #fff;
+}
+
+.swich-btn__toggle.active {
+  background-color: #333;
+  left: calc(100% - 45px);
+}
+
+.swich-btn__home,
+.swich-btn__toggle {
+  transition: 0.25s ease-in;
+}
+
+ul {
+  display: flex;
+  background: #333;
+  flex-direction: column;
+}
+.box {
+  height: 50px;
+  width: 50px;
+  transition: 0.25s ease-in-out;
+}
+
+.box.one {
+  background-color: red;
+}
+
+.box.two {
+  background-color: blue;
+}
+
+.box.three {
+  background: pink;
+}
+
+.box.one.active {
+  background-color: black;
+}
+
+.box.two.active {
+  background-color: orange;
+}
+
+.box.three.active {
+  background: purple;
+}
