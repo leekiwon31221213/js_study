@@ -5,42 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>0503스터디복습</title>
+    <!-- jQuery CDN 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    -->
     <style>
       * {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
+        font-size: 15px;
       }
       ul,
       li {
         list-style: none;
       }
+      a {
+        text-decoration: none;
+      }
 
-      .box {
+      .li-parent li:last-child {
+        padding: 0;
+      }
+
+      .menu > a {
+        background-color: rgba(255, 255, 0, 0.1);
         width: 100%;
       }
 
-      ul > li:nth-child(1) {
-        margin-top: 50px;
-      }
-
       .li-parent {
+        background-color: rgba(255, 0, 0, 0.1);
+        width: 100%;
+        position: relative;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         text-align: center;
+      }
+      .menu {
+        display: block;
+        width: 19%;
+        position: relative;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
       }
       .menu-sub {
         display: none;
-      }
-
-      .menu-sub.active {
-        display: block;
-        width: 200px;
-        height: 100px;
-        background-color: royalblue;
+        width: 100%;
         font-weight: bold;
         color: #fff;
-        border-radius: 25px;
+        background-color: rgba(255, 0, 0, 0.1);
+      }
+      .menu-sub li {
+        border-radius: 20px;
+        background-color: rgba(255, 0, 255, 0.1);
       }
     </style>
   </head>
@@ -48,27 +67,90 @@
     <div id="section">
       <div class="box">
         <ul class="li-parent">
-          <li class="menu">
-            Menu
-            <ul>
-              <li class="menu-sub">Sub Menu 1</li>
-              <li class="menu-sub">Sub Menu 2</li>
+          <li class="menu" onmouseleave="subMenuUp(this)">
+            <a onmouseenter="subMenuDown(this)" href="#none">Menu</a>
+            <ul class="menu-sub" onmouseleave="">
+              <li><a href="#none">Sub Menu 1</a></li>
+              <li><a href="#none">Sub Menu 2</a></li>
+              <li><a href="#none">Sub Menu 3</a></li>
+            </ul>
+          </li>
+
+          <li class="menu" onmouseleave="subMenuUp(this)">
+            <a onmouseenter="subMenuDown(this)" href="#none">Menu2</a>
+            <ul class="menu-sub">
+              <li><a href="#none">Sub Menu 1</a></li>
+              <li><a href="#none">Sub Menu 2</a></li>
+              <li><a href="#none">Sub Menu 3</a></li>
+            </ul>
+          </li>
+
+          <li class="menu" onmouseleave="subMenuUp(this)">
+            <a onmouseenter="subMenuDown(this)" href="#none">Menu3</a>
+            <ul class="menu-sub">
+              <li><a href="#none">Sub Menu 1</a></li>
+              <li><a href="#none">Sub Menu 2</a></li>
+              <li><a href="#none">Sub Menu 3</a></li>
+            </ul>
+          </li>
+
+          <li class="menu" onmouseleave="subMenuUp(this)">
+            <a onmouseenter="subMenuDown(this)" href="#none">Menu4</a>
+            <ul class="menu-sub">
+              <li><a href="#none">Sub Menu 1</a></li>
+              <li><a href="#none">Sub Menu 2</a></li>
+              <li><a href="#none">Sub Menu 3</a></li>
+            </ul>
+          </li>
+
+          <li class="menu" onmouseleave="subMenuUp(this)">
+            <a onmouseenter="subMenuDown(this)" href="#none">Menu5</a>
+            <ul class="menu-sub">
+              <li><a href="#none">Sub Menu 1</a></li>
+              <li><a href="#none">Sub Menu 2</a></li>
+              <li><a href="#none">Sub Menu 3</a></li>
             </ul>
           </li>
         </ul>
       </div>
     </div>
     <script>
-      const MenuBox = document.querySelector(".menu");
-      MenuBox.addEventListener("mouseenter", function (event) {});
-      MenuBox.addEventListener("mouseleave", function (event) {});
-      function MenuToggle() {
-        if (MenuBox) {
-        } else {
-        }
+      const mainMenu = document.querySelector(".menu");
+      const subMenu = document.querySelector(".menu-sub");
+
+      /* 이해가안됨 */
+      let subMenuList;
+      function subMenuDown(x) {
+        subMenuList = x.nextElementSibling;
+        subMenuList.style.display = "block";
       }
 
-      console.log(MenuBox);
+      function subMenuUp(x) {
+        subMenuList = x.children[1];
+        subMenuList.style.display = "none";
+      }
+
+      //0505
+
+      // mainMenu.addEventListener("mouseenter", function (subMenu) {
+      //   subMenu.classList.add(".active");
+      //   subMenu.style.display = "block";
+      //   subMenu.animate(
+      //     {
+      //       transform: ["translate(0)", "translateY(5px)"],
+      //     },
+      //     {
+      //       duration: 300,
+      //       fill: "forwards",
+      //       easing: "ease-in-out",
+      //     }
+      //   );
+      // });
+
+      // subMenu.addEventListener("mouseleave", function () {
+      //   subMenu.classList.remove(".active");
+      //   subMenu.style.display = "none";
+      // });
     </script>
   </body>
 </html>
