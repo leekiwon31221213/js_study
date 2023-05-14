@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //  = [] 리스트 형식을 만들떄
+
+      /* 실습1번 */
+      //후라이팬 2번
+      function frypan(x) {
+        /* 가열 3번 */
+        let result;
+        if (x === "계란") {
+          result = x + "후라이";
+        } else if (x === "소세지") {
+          result = x + "볶음";
+        } else {
+          result = "숯";
+        }
+        console.log(result);
+      }
+
+      /* 다용도 목적팬 1번 */
+      frypan("계란");
+      frypan("소세지");
+      frypan("계란");
+      /* 함수호출 순서 1>2>3 */
+
+      /* 실습2번 */
+      /* 재료 */
+      //초코칩쿠키: 초코반죽(x) + 초코칩(y)
+      //초코빵: 초코반죽(x) +이스트(y)
+      //버터쿠키: 밀가루반죽(x) + 버터(y)
+      //아몬드쿠키: 밀가루반죽(x) + 아몬드(y)
+      //식빵: 밀가루반죽(x) + 이스트(y)
+      //x는 반죽 y는 재료
+      function oven(x, y) {
+        let result;
+        //반죽타입 확인
+        if (x === "초코반죽") {
+          //초코반죽 재료타입 확인
+          if (y === "초코칩") {
+            result = "초코칩쿠키";
+          } else if (y === "이스트") {
+            result = "초코빵";
+          } else {
+            console.log("재료를 정확이 넣어주세요");
+          }
+        } else if (x === "밀가루반죽") {
+          if (y === "버터") {
+            result = "버터쿠키";
+          } else if (y === "아몬드") {
+            result = "아몬드쿠키";
+          } else if (y === "이스트") {
+            result = "식빵";
+          } else {
+            console.log("재료를 정확하게 넣어주세요");
+          } /* else 뒤에는 아무것도 넣을수 없음 */
+        } else {
+          console.log("재료를 정확하게 넣어주세요");
+        }
+        console.log(result);
+      }
+      oven("초코반죽", "초코칩");
+      oven("초코반죽", "이스트");
+      oven("밀가루반죽", "버터");
+      oven("밀가루반죽", "아몬드");
+      oven("밀가루반죽", "이스트");
+
+      /* 결과 값이 다를떄 */
+      oven("본죽", "이스트");
+      oven("밀가루반죽", "카이스트");
+
+      /* 실습3번 */
+      /* 재료 목록 */
+      // 고추장 떡볶이: 고추장(x) + 떡(y)
+      // 고추장 오뎅: 고추장(x) + 오뎅(y)
+      // 짜장 분모자: 짜장(x) + 분모자(y)
+      // 짜장 푸주: 짜장(x) + 푸주(y)
+      // 마라 분모자+중국당면: 마라(x) + 분모자(y) + 중국당면(e)
+      // 마라 푸주+라면: 마라(x) + 푸주(y) +라면(e)
+
+      //떡볶이 만들기
+      function ricecake(x, y, e) {
+        let result;
+        if (x === "고추장") {
+          if (y === "떡") {
+            result = "고추장 떡볶이";
+          } else if (y === "오뎅") {
+            result = "고추장 오뎅";
+          } else {
+            result = "재료를 잘못 넣었음";
+          }
+        } else if (x === "짜장") {
+          if (y === "분모자") {
+            result = "짜장 분모자";
+          } else if (y === "푸주") {
+            result = "짜장 푸주";
+          } else {
+            result = "재료를 잘못 넣었음";
+          }
+        } else if (x === "마라") {
+          if (y + e === "분모자중국당면") {
+            result = "마라 분모자 중국당면";
+          } else if (y + e === "푸주라면") {
+            result = "마라 푸주 라면";
+          } else {
+            result = "재료를 잘못 넣었음";
+          }
+        } else {
+          result = "재료를 잘못 넣었음";
+        }
+        console.log(result);
+      }
+
+      ricecake("고추장", "떡");
+      ricecake("고추장", "오뎅");
+      ricecake("짜장", "분모자");
+      ricecake("짜장", "푸주");
+      ricecake("마라", "분모자", "중국당면");
+      ricecake("마라", "푸주", "라면");
+
+      /* 결과값이 다를떄 */
+      ricecake("고춧가루", "분모자");
+      ricecake("짜장가루", "떡");
+      ricecake("마라가루", "오뎅");
+      ricecake("마라가루", "오뎅", "떡");
+    </script>
+  </body>
+</html>
