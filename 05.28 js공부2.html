@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js0528 공부</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+
+      button {
+        cursor: pointer;
+        outline: none;
+        border-style: none;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #333;
+        background-color: transparent;
+      }
+      .cup-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .cup-wrap {
+        flex-direction: column;
+      }
+      .cup_inner,
+      .cup2_inner {
+        background-color: #eee;
+        width: 500px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+
+      .cup_inner .oil {
+        background-color: blanchedalmond;
+        height: 30px;
+        width: 100%;
+      }
+
+      .cup_inner .orange {
+        background-color: orange;
+        height: 30px;
+        width: 100%;
+      }
+
+      .cup2_inner .water {
+        background-color: royalblue;
+        height: 30px;
+        width: 100%;
+      }
+      .cup2_inner .green {
+        background-color: green;
+        height: 30px;
+        width: 100%;
+      }
+      .cup_inner {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ineer html -->
+    <div class="cup-container">
+      <div class="cup-wrap">
+        <div class="cup_inner">
+          <div class="oil"></div>
+        </div>
+        <div class="btn-box1">
+          <button>ineer html</button>
+        </div>
+      </div>
+
+      <!-- insertAdjacentHTML -->
+      <div class="cup-wrap">
+        <div class="cup2_inner">
+          <div class="water"></div>
+        </div>
+
+        <div class="btn-box2">
+          <button class="b">insertAdjacentHTML</button>
+          <button class="g">insertAdjacentHTML</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let oil_orange = `<div class="orange"></div>`;
+      let water = `<div class="water"></div>`;
+      let green = `<div class="green"></div>`;
+
+      const oilBtn = document.querySelector(".btn-box1 > button");
+      const waterBtn = document.querySelector(".btn-box2 > button.b");
+      const veBtn = document.querySelector(".btn-box2 > button.g");
+
+      oilBtn.onclick = function () {
+        document.querySelector(".cup_inner").innerHTML = oil_orange;
+      };
+
+      waterBtn.onclick = function () {
+        document
+          .querySelector(".cup2_inner")
+          .insertAdjacentHTML("beforeend", water);
+      };
+      veBtn.onclick = function () {
+        document
+          .querySelector(".cup2_inner")
+          .insertAdjacentHTML("afterbegin", green);
+      };
+    </script>
+  </body>
+</html>

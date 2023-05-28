@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js0528 공부</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      h2 {
+        width: 120px;
+        font-size: 16px;
+      }
+      .add_staff {
+        margin: 50px auto;
+        position: relative;
+        width: 100%;
+        max-width: calc(100% - 268px);
+        height: fit-content;
+        padding-top: 20px;
+      }
+      .input-box {
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        position: relative;
+        width: 100%;
+        height: fit-content;
+      }
+
+      .input-box > ul {
+        display: flex;
+        width: 100%;
+        height: 70px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        flex-direction: column;
+      }
+      .input-box > ul > li {
+        display: flex;
+        align-items: center;
+      }
+
+      .input-box > ul > li .input-title {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background-color: #eee;
+      }
+      .input-box > ul > li > input {
+        margin-left: 20px;
+        height: 30px;
+        width: calc(100% - 200px);
+      }
+
+      button {
+        cursor: pointer;
+        outline: none;
+        border-style: none;
+        font-size: 16px;
+        font-weight: bolder;
+        color: #333;
+        background-color: #eee;
+        width: 100%;
+        height: 40px;
+        border-radius: 3px;
+      }
+
+      button::before {
+        content: "+";
+        padding-right: 10px;
+      }
+
+      .btn-box {
+        margin-top: 20px;
+        width: 100%;
+      }
+      .blank {
+        margin-top: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="add_staff">
+      <div class="input-box">
+        <ul>
+          <li>
+            <h2 class="input-title">이름</h2>
+            <input type="text" />
+          </li>
+          <li>
+            <h2 class="input-title">연락처</h2>
+            <input type="tel" />
+          </li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="blank"></div>
+      <div class="btn-box">
+        <button class="addadd">담당자추가</button>
+      </div>
+    </div>
+
+    <script>
+      /* onclick 방식 */
+      /* 퀘리셀렉터 올 사용하기 */
+
+      let tagUl = `
+        <ul>
+          <li>
+            <h2 class="input-title">이름</h2>
+            <input type="text" />
+          </li>
+          <li>
+            <h2 class="input-title">연락처</h2>
+            <input type="tel" />
+          </li>
+          <li></li>
+        </ul>
+        `;
+      const addbtn = document.querySelector(".addadd");
+      addbtn.onclick = function () {
+        document
+          .querySelector(".input-box")
+          .insertAdjacentHTML("beforeend", tagUl);
+        /* innerHTML 은 기존에 있던 내용물 대신에 들어오는 형태  */
+        /* insertAdjacentHTML 은 기존에 있던 내용물 + 추가로 들어오는 형태 */
+
+        /* 'beforebegin' element 앞에
+
+        'afterbegin' element 안에 가장 첫번째 child
+
+        'beforeend' element 안에 가장 마지막 child
+
+        'afterend' element 뒤에 
+*/
+      };
+    </script>
+  </body>
+</html>
