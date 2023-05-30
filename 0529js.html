@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li class="name-input-box">
+                    <h2>이름</h2>
+                    <input type="text" />
+                </li>
+            </ul>
+            <button class="btn">ddd</button>
+        </div>
+        <script>
+            const name_input_con = `<ul>
+                  <li class="name-input-box">
+                      <h2>인풋박스이름</h2>
+                      <input type="text" />
+                  </li>
+              </ul>`;
+            const name_input_btn = document.querySelector('.btn');
+            name_input_btn.onclick = function () {
+                document.querySelector('.name-input-box').insertAdjacentHTML('afterbegin', name_input_con);
+            };
+        </script>
+    </body>
+</html>
