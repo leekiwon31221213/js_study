@@ -1,21 +1,97 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="textBox">
-      <p>ddsaadssd</p>
-      <span>dasndjasndas</span>
-    </div>
-    <script>
-      let pText = document.querySelector('.textBox > p');
-      let spanText = document.querySelector('.textBox > span');
-      pText.style.color = 'red';
-      spanText.style.color = 'blue';
-    </script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+            .menu {
+                width: 200px;
+                height: 50px;
+                position: fixed;
+                left: 50px;
+                border-radius: 0 0 30px 30px;
+                background-color: rgba(0, 0, 0, 0.6);
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                color: white;
+            }
+            .menu > span:hover {
+                border-bottom: 2px solid #fff;
+                cursor: pointer;
+            }
+            .con {
+                height: 500px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            div:nth-child(2) {
+                background-color: coral;
+            }
+
+            div:nth-child(3) {
+                background-color: violet;
+            }
+
+            div:nth-child(4) {
+                background-color: teal;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 집에서 한거 -->
+        <div class="menu">
+            <span>1번</span>
+            <span>2번</span>
+            <span>3번</span>
+        </div>
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+
+        <!-- 회사에서 한거 -->
+        <div class="textBox">
+            <p>ddsaadssd</p>
+            <span>dasndjasndas</span>
+        </div>
+        <script>
+            const span = document.querySelectorAll('span');
+            //span 모두 선택하기
+            const con = document.querySelectorAll('.con');
+            //class con 모두 선택
+
+            const firstTop = con[0].offsetTop;
+            const secondTop = con[1].offsetTop;
+            const thirdTop = con[2].offsetTop;
+
+            span[0].onclick = function () {
+                window.scroll({ top: firstTop, behavior: 'auto' });
+                console.log(span);
+            };
+
+            span[1].onclick = function () {
+                window.scroll({ top: secondTop, behavior: 'smooth' });
+                console.log(span);
+            };
+
+            span[2].onclick = function () {
+                window.scroll({ top: thirdTop, behavior: 'smooth' });
+                console.log(span);
+            };
+
+            //회사에서 한거
+            let pText = document.querySelector('.textBox > p');
+            let spanText = document.querySelector('.textBox > span');
+            pText.style.color = 'red';
+            spanText.style.color = 'blue';
+        </script>
+    </body>
 </html>
