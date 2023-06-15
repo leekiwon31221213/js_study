@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li {
+        list-style: none;
+      }
+      .header-nav {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .mom {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        background-color: red;
+        cursor: pointer;
+      }
+
+      .header-nav ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .header-nav ul:nth-child(2) {
+        padding: 0 50px;
+      }
+
+      .child {
+        background-color: aqua;
+        text-align: center;
+        width: 100px;
+        max-width: 200px;
+        height: 100px;
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.3s ease-in;
+        z-index: -1;
+      }
+      .on {
+        top: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <nav class="header-nav">
+        <ul>
+          <li class="mom">
+            메뉴
+            <ul class="child">
+              <li>햄버거</li>
+              <li>피자</li>
+              <li>치킨</li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="mom">
+            소개
+            <ul class="child">
+              <li>우리집</li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul>
+          <li class="mom">
+            고객센터
+            <ul class="child">
+              <li>faq</li>
+              <li>qna</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <script>
+      let nav_menu_mom = document.querySelector('.header-nav');
+      /* list 가 있으면 첫번째만 잡아줌 */
+      let nav_menu_child = document.querySelectorAll('.child')[0];
+      /* 전부를 담아줄 뿐이지 손잡이로 이벤트 발동 시키려면 추가적으로
+      작업을 해줘야함 반복문 */
+
+
+      nav_menu_mom.addEventListener('mouseenter', function () {
+        if(nav_menu_mom===0){nav_menu_child.style.cssText = `
+          display: none;`;
+        }else if(){
+        nav_menu_child.style.cssText = `
+          display: block;
+          top: 72px;
+          `;
+        }
+      });
+
+      //   header.addEventListener('mouseenter', () => {
+      //     header.classList.add('header_on');
+      //   });
+
+      //   TopNavbar.addEventListener('mouseenter', () => {
+      //     lnb__list.forEach((e, i) => {
+      //       //e랑 lnb__list[i] 똑같은 앤데 e가 짧아서 쓰는거
+      //       e.classList.remove('lnb__list_off');
+      //       e.classList.add('lnb__list_on');
+      //     });
+      //   });
+    </script>
+  </body>
+</html>
