@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      li,
+      ol {
+        list-style: none;
+      }
+      button {
+        outline: none;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+      }
+
+      .wrap {
+        width: 100%;
+        height: 300px;
+        background-color: aqua;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+      }
+      .share-fixed-wrap {
+        display: flex;
+      }
+      .fixed-btn-con,
+      .share-btn-con {
+        display: block;
+        height: 200px;
+        opacity: 0;
+        position: absolute;
+        transition: 0.6s ease-in-out;
+        border-radius: 25px;
+      }
+
+      .fixed-btn-con {
+        background-color: red;
+      }
+      .share-btn-con {
+        background-color: purple;
+      }
+      /* 디스플레이에서 트렌지션이 먹지 않아 엑티브로 먼저 블록을 시킨뒤 js > settimeout 통해 딜레이 시킨후 .ani적용  */
+      .fixed-btn-con.active {
+        display: block;
+      }
+      .fixed-btn-con.ani {
+        transform: translateY(-100%);
+        opacity: 1;
+      }
+
+      .share-btn-con.active {
+        display: block;
+      }
+      .share-btn-con.ani {
+        transform: translateY(-100%);
+        opacity: 1;
+      }
+      /* 디스플레이에서 트렌지션이 먹지 않아 엑티브로 먼저 블록을 시킨뒤 js > settimeout 통해 딜레이 시킨후 .ani적용  */
+
+      .fixed-btn,
+      .share-btn {
+        width: 100%;
+        min-width: 100px;
+        height: 50px;
+        font-weight: bolder;
+        font-size: 15px;
+        border-radius: 25px;
+        transition: 0.3s ease-in both;
+        position: relative;
+      }
+      .fixed-btn {
+        background-color: royalblue;
+        color: #fff;
+      }
+
+      .share-btn {
+        background-color: #fff;
+        color: #333;
+      }
+      .fixed-wrap {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="share-fixed-wrap">
+        <div class="share-wrap">
+          <div class="share-btn-con">
+            <div class="text-box">
+              <p>dsadasdassdasd</p>
+              <span>sadasdasads</span>
+              <p>dasdsadsaasdasds</p>
+            </div>
+          </div>
+
+          <div class="share-btn-box">
+            <button type="button" class="share-btn" onclick="share_btn()">
+              <span>공유하기</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="fixed-wrap">
+          <div class="fixed-btn-con">
+            <div class="text">
+              <p>dsadasdassdasd</p>
+              <span>sadasdasads</span>
+            </div>
+          </div>
+
+          <div class="fixed-btn-box">
+            <button type="button" class="fixed-btn" onclick="fixed_btn()">
+              <span>제출하기</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      fixed_btn = () => {
+        let fixed_btn1 = document.querySelector('.fixed-btn');
+        let fixed_btn_con = document.querySelector('.fixed-btn-con');
+
+        fixed_btn_con.classList.toggle('active');
+        setTimeout(() => {
+          fixed_btn_con.classList.toggle('ani');
+        }, 1);
+      };
+
+      function share_btn() {
+        let share_btn1 = document.querySelector('.share-btn');
+        let share_btn_con = document.querySelector('.share-btn-con');
+
+        share_btn_con.classList.toggle('active');
+        setTimeout(() => {
+          share_btn_con.classList.toggle('ani');
+        }, 1);
+      }
+    </script>
+  </body>
+</html>

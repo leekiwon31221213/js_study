@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var baemin; //변수 배민
+      function menu(food) /* 함수 메뉴(이름은푸드) */ {
+        var hh; //변수 hh
+        if (food === '떡볶이') {
+          /* 만약 함수 === 떡복이면 */ hh = '좋아!'; //변수 hh는 좋아
+          console.log('menu함수출력: ' + food + hh); // 함수food + 변수hh 가 출력
+          return (baemin = food); //변수 baemin과 함수 food를 리턴한다 저기 밑에 menu("떡볶이로")
+        } else if (food === '오이') {
+          /* 만약 아니라면 함수food는 오이와 같다 */ hh = '싫어!'; //변수 hh는 싫어
+          console.log('menu함수출력: ' + food + hh); //함수food + 변수hh가 출력
+        }
+      }
+      menu('떡볶이'); /* menu(food) = food 정체는 떡볶이  */
+      console.log('배민장바구니: ' + baemin);
+    </script>
+  </body>
+</html>
