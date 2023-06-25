@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    let coke = 1200; let sprite = 1100; let fanta = 1300; function drink (money,
+    select, count) { 조건문 return 잔돈 } drink(가진 돈, 음료선택, 개수) if () {
+    return 잔돈, 음료 } else { return 집어 넣은돈 (ex. 천원 넣고 1200원짜리
+    콜라선택해서 집어넣은돈 퉤) }
+
+    <script>
+      /* return 코드를 안줄였을떄  */
+      function drink(select, count, pay) /* 선택, 개수 ,지불한 돈 */ {
+        let coke = 1200;
+        let sprite = 1100;
+        let fanta = 1300;
+        let totalPay = 0; /* 지불해야할 돈 */
+        let charge = 0; /* 거스름돈 */
+
+        if (select == "콜라") {
+          totalPay = coke * count;
+          if (pay >= totalPay) {
+            /* 지불한 돈이 지불해야할 돈보다 크거나같을경우 */
+            charge = pay - totalPay /* 거스름돈  */;
+            return `콜라: ${count}개, 거스름돈: ${charge}원`;
+          } else {
+            return `${totalPay - pay} 원이 부족합니다.`;
+          }
+        } else if (select == "사이다") {
+          /* 만약 사이다를 선택했을때 */
+          totalPay = sprite * count; // 지불할돈 은 스프라이트 곱하기 개수
+          if (pay >= totalPay) {
+            /* 지불한 돈이 지불해야할 돈보다 크거나 같을경우 */
+            /* 거스름돈을 줘야함 */
+            charge =
+              pay - totalPay; /* 거스름돈은 지불한돈 빼기 지불해야할 돈 */
+            return `사이다: ${count}개, 거스름돈: ${charge}원`;
+            /* 반환 */
+            /* ${} 텍스트안에 파라미터를 넣을수 있음 */
+          } else {
+            /* 만약 아닌 경우 */
+            return `${totalPay - pay} 원이 부족합니다.`;
+            /* 지불해야할돈 - 지불한 돈 이 얼마가 부족한지 알려준다 */
+          }
+        } else if (select == "환타") {
+          totalPay = fanta * count;
+        }
+        if (pay < totalPay) {
+          /* 지불한 돈이 지불해야할 돈보다 작을경우(미만) */ return `${
+            totalPay - pay
+          } 원이 부족합니다.`;
+          /* 돈이 부족하다고 알려준다 */
+        } else if (pay >= totalPay) {
+          /* 지불한 돈이 지불해야할 돈보다 크거나 같을경우(이상) */ charge =
+            pay - totalPay; /* 거스름돈을 줘야함 */
+
+          return `환타: ${count}개, 거스름돈: ${charge}원`;
+        }
+      }
+      drink("콜라", 2, 2000);
+      drink("사이다", 1, 2000);
+      console.log(drink("사이다", 2, 2000));
+
+      /* return 코드를 줄였을떄 */
+      function drink(select, count, pay) /* 선택, 개수 ,지불한 돈 */ {
+        let coke = 1200;
+        let sprite = 1100;
+        let fanta = 1300;
+        let totalPay = 0; /* 지불해야할 돈 */
+        let charge = 0; /* 거스름돈 */
+
+        if (select == "콜라") {
+          totalPay = coke * count;
+          if (pay >= totalPay) {
+            /* 지불한 돈이 지불해야할 돈보다 크거나같을경우 */
+            charge = pay - totalPay /* 거스름돈  */;
+            return `콜라: ${count}개, 거스름돈: ${charge}원`;
+          }
+        } else if (select == "사이다") {
+          /* 만약 사이다를 선택했을때 */
+          totalPay = sprite * count; // 지불할돈 은 스프라이트 곱하기 개수
+          if (pay >= totalPay) {
+            /* 지불한 돈이 지불해야할 돈보다 크거나 같을경우 */
+            /* 거스름돈을 줘야함 */
+            charge =
+              pay - totalPay; /* 거스름돈은 지불한돈 빼기 지불해야할 돈 */
+            return `사이다: ${count}개, 거스름돈: ${charge}원`;
+            /* 반환 */
+            /* ${} 텍스트안에 파라미터를 넣을수 있음 */
+          }
+        } else if (select == "환타") {
+          totalPay = fanta * count;
+          if (pay >= totalPay) {
+            /* 지불한 돈이 지불해야할 돈보다 크거나 같을경우(이상) */ charge =
+              pay - totalPay; /* 거스름돈을 줘야함 */
+            return `환타: ${count}개, 거스름돈: ${charge}원`;
+          }
+        } else {
+          /* 만약 아닌 경우 */
+          return `${totalPay - pay}원이 모자랍니다.`;
+          /* 지불해야할돈 - 지불한 돈 이 얼마가 부족한지 알려준다 */
+        }
+      }
+      drink("콜라", 2, 2000);
+      drink("사이다", 1, 2000);
+      drink("환타", 1, 1000);
+      console.log(drink("사이다", 2, 2000));
+      console.log(drink("환타", 1, 100));
+      console.log(drink("사이다", 1, 3000));
+    </script>
+  </body>
+</html>
