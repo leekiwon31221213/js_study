@@ -130,19 +130,18 @@
         `;
       const addbtn = document.querySelector(".addadd");
       addbtn.onclick = function () {
-        document
-          .querySelector(".input-box")
-          .insertAdjacentHTML("beforeend", tagUl);
+        document.querySelector(".input-box").insertAdjacentHTML("beforeend", tagUl);
         /* innerHTML 은 기존에 있던 내용물 대신에 들어오는 형태  */
         /* insertAdjacentHTML 은 기존에 있던 내용물 + 추가로 들어오는 형태 */
 
-        /* 'beforebegin' element 앞에
+        /* 'beforebegin' element 앞에 (prev silbling)
 
-        'afterbegin' element 안에 가장 첫번째 child
+        'afterbegin' element 안에 가장 첫번째 child(first child)
 
-        'beforeend' element 안에 가장 마지막 child
+        'beforeend' element 안에 가장 마지막 child(last child)
+        
 
-        'afterend' element 뒤에 
+        'afterend' element 뒤에 (next silbling)
 */
       };
     </script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --page-width: 200px;
+        --page-height: 200px;
+        --page-gap: 10px;
+        --page-count: 9;
+      }
+      li {
+        border: 1px solid red;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="page-list"></ul>
+    <script>
+      let pageWidth = getComputedStyle(document.documentElement).getPropertyValue("--page-width");
+      let pageHeight = getComputedStyle(document.documentElement).getPropertyValue("--page-height");
+      let pageCount = getComputedStyle(document.documentElement).getPropertyValue("--page-count");
+      let pageList = document.querySelector(".page-list");
+
+      for (var i = 0; i < pageCount; i++) {
+        //변수 i 는 0 ; 페이지count가  변수 i보다 작은경우 아래내용을 먼저 실행 시킨 후  변수 i++증가시킨다
+        pageList.insertAdjacentHTML(
+          "beforeend",
+          `
+       <li style="margin-bottom: calc(var(--page-gap) * ${i});" >우리집 강아지 로또</li>`
+        );
+      }
+      /*  innerHTML 은 기존에 있던 내용물 대신에 들어오는 형태
+     insertAdjacentHTML 은 기존에 있던 내용물 + 추가로 들어오는 형태 */
+
+      // 'beforebegin' element 앞에
+
+      // 'afterbegin' element 안에 가장 첫번째 child
+
+      // 'beforeend' element 안에 가장 마지막 child
+
+      // 'afterend' element 뒤에
+    </script>
+  </body>
+</html>
