@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랜덤 배너</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+      .banner {
+        max-width: 80%;
+        max-height: 80%;
+        border: 2px solid #333;
+      }
+      .bannerImage {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner">
+      <img class="bannerImage" src="" alt="랜덤 배너" />
+    </div>
+    <script>
+      const bannerImages = [
+        "./img/css.png",
+        "./img/html.png",
+        "./img/javascript.png",
+        // 추가적인 배너 이미지 경로를 배열에 넣으세요
+      ];
+
+      /* gpt코드 */
+      function getRandomBanner() {
+        /* 순서 4번 */
+        const randomIndex = Math.floor(Math.random() * bannerImages.length);
+        return bannerImages[randomIndex]; /* 순서 5번 */
+      }
+
+      function updateBanner() {
+        /* 순서 2번 */
+        const bannerImage = document.querySelector(".bannerImage");
+        const randomBanner = getRandomBanner();
+        // const randomBanner = getRandomBanner();  /* 순서3번 */
+        // const randomBanner = bannerImages[randomIndex];  /* 순서5번 */
+
+        bannerImage.src = randomBanner;
+        bannerImage.alt = "랜덤 배너";
+      }
+
+      // 페이지 로드시 초기 배너 설정
+      updateBanner(); /* 순서 1 */
+
+      /* 줄인 코드 */
+      document.querySelector(".bannerImage").src = bannerImages[Math.floor(Math.random() * bannerImages.length)];
+    </script>
+  </body>
+</html>

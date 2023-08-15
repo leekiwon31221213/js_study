@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>test web</h1>
+    <p>
+      청춘의 같이, 구하지 갑 그것을 약동하다. 꾸며 있음으로써 심장의 꽃이 봄바람이다. 긴지라 실로 얼음에 못하다 하는 사라지지 청춘의 이 봄바람이다. 위하여, 행복스럽고 더운지라 구하지 크고 있을
+      동산에는 맺어, 철환하였는가? 스며들어 열락의 피가 봄바람이다. 얼마나 사랑의 우리의 그들을 옷을 역사를 거친 아니다. 피가 속에 쓸쓸한 동산에는 보라. 가치를 갑 없으면 붙잡아 찾아 있음으로써 이상을
+      부패뿐이다. 그와 품으며, 많이 역사를 듣기만 작고 돋고, 그들을 뛰노는 부패뿐이다.
+    </p>
+
+    <button class="right-btn btn">밝은 화면</button>
+    <button class="black-btn btn">어두운 화면</button>
+
+    <script>
+      Array.from(document.querySelectorAll(".btn")).forEach((ele) => {
+        ele.addEventListener("click", (e) => {
+          if (e.target.classList.contains("right-btn")) {
+            document.body.style.cssText = `
+                background-color:#eee;
+                color:black;
+            `;
+          } else if (e.target.classList.contains("black-btn")) {
+            document.body.style.cssText = `
+                background-color:#333;
+                color:#fff;
+            `;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
