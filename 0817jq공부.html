@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body.active {
+        background-color: pink;
+        border: 2px solid green;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      ul,
+      li,
+      ol {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: unset;
+      }
+      nav {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        height: auto;
+      }
+
+      .menu-inner {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+      }
+      .main-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .main-menu > a {
+        position: relative;
+        width: 100%;
+        display: block;
+        height: auto;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .sub-menu {
+        display: none;
+        width: 60%;
+        background-color: #333;
+        color: #fff;
+      }
+      .sub-menu > li {
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        border: 1px solid #000;
+      }
+
+      .sub-menu li:hover {
+        background-color: #dbe4ea;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-box">
+      <button class="btn">첫번째 버튼</button>
+      <button class="btn dudung">두번쨰 버튼</button>
+      <button class="btn coloring">세번째 버튼</button>
+    </div>
+
+    <div class="menu-container">
+      <nav>
+        <ul class="menu-inner">
+          <li class="main-menu">
+            <a href="#none">company</a>
+            <ul class="sub-menu">
+              <li>company</li>
+              <li>company</li>
+              <li>company</li>
+              <li>company</li>
+            </ul>
+          </li>
+
+          <li class="main-menu">
+            <a href="#none">happy</a>
+            <ul class="sub-menu">
+              <li>happy</li>
+              <li>happy</li>
+              <li>happy</li>
+              <li>happy</li>
+            </ul>
+          </li>
+
+          <li class="main-menu">
+            <a href="#none">sorry</a>
+            <ul class="sub-menu">
+              <li>sorry</li>
+              <li>sorry</li>
+              <li>sorry</li>
+              <li>sorry</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //onclick
+        $(".btn").on("click", function () {
+          if ($(this).hasClass("dudung")) {
+            alert("등장");
+          } else if ($(this).hasClass("coloring")) {
+            $("body").addClass("active");
+          } else {
+            $("body").removeClass("active");
+          }
+          //hasClass = 클래스를 가지고있으면 바닐라 스크립트로 따지면 contains
+        });
+
+        $(".main-menu").hover(
+          function () {
+            $(this).find(".sub-menu").stop().slideDown();
+          },
+          function () {
+            $(this).find(".sub-menu").stop().slideUp();
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
