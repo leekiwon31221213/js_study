@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/0822.css" />
+  </head>
+  <body>
+    <div class="menu-container">
+      <nav>
+        <ul class="menu-inner">
+          <li class="main-menu">
+            <a href="#none">company</a>
+            <ul class="sub-menu">
+              <li>company</li>
+              <li>company</li>
+              <li>company</li>
+              <li>company</li>
+            </ul>
+          </li>
+
+          <li class="main-menu">
+            <a href="#none">happy</a>
+            <ul class="sub-menu">
+              <li>happy</li>
+              <li>happy</li>
+              <li>happy</li>
+              <li>happy</li>
+            </ul>
+          </li>
+
+          <li class="main-menu">
+            <a href="#none">sorry</a>
+            <ul class="sub-menu">
+              <li>sorry</li>
+              <li>sorry</li>
+              <li>sorry</li>
+              <li>sorry</li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".menu-inner").hover(
+          function () {
+            $(this).find(".sub-menu").stop().slideDown();
+          },
+          function () {
+            $(this).find(".sub-menu").stop().slideUp();
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

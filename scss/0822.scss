@@ -1,0 +1,65 @@
+@import url(../css/reset.css);
+
+/* scss 변수 */
+$header-menu-size: (/* 키값: 벨류 */ menu-container-common-W: 100%, menu-nav-Max-W: 1200px, menu-nav-margin: 0 auto, menu-container-common-H: auto, menu-container-Flex: flex);
+
+/* mixin js>함수선언
+include js>함수호출
+@mixin header-submenu-common {
+  background-color: #333;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    color: #333;
+  }
+}
+
+@include header-submenu-common; */
+/* 네스팅: 계속 내림 추가하여 쓰는거 */
+.menu-container {
+  > nav {
+    width: map-get($header-menu-size, menu-container-common-W);
+    max-width: map-get($header-menu-size, menu-nav-Max-W);
+    margin: map-get($header-menu-size, menu-nav-margin);
+    height: map-get($header-menu-size, menu-container-common-H);
+    display: map-get($header-menu-size, menu-container-Flex);
+
+    .menu-inner {
+      width: inherit;
+      display: inherit;
+      justify-content: space-around;
+      text-align: center;
+
+      .main-menu {
+        width: inherit;
+        display: inherit;
+        flex-direction: column;
+        align-items: center;
+
+        > a {
+          position: relative;
+          width: inherit;
+          height: inherit;
+          font-size: 20px;
+          font-weight: bold;
+          color: #333;
+          display: block;
+        }
+
+        .sub-menu {
+          display: none;
+          width: 60%;
+          background-color: #333;
+          height: 100%;
+          color: #fff;
+
+          > li {
+            width: map-get($header-menu-size, menu-container-common-W);
+            height: 80px;
+            line-height: 80px;
+          }
+        }
+      }
+    }
+  }
+}
