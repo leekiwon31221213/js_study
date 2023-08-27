@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // console.log('우리집 ' + '비밀번호 ' + 9457);
+
+            const a = '우리집 ' + '비밀번호 ' + 9457;
+            const b = ' 공동현관 ' + '비밀번호 ' + 5423;
+            console.log(a);
+
+            // console.log(a + ' 공동현관 ' + '비밀번호 ' + 5423);
+
+            console.log(a + b);
+
+            /* boolean 불린  */
+            //ture ,fales 참 것을 의미
+            const amiFat = true;
+            console.log(amiFat);
+
+            /* array 배열*/
+            mon = 'mon';
+            tue = 'tue';
+            wed = 'wed';
+            thu = 'thu';
+            fri = 'fri';
+            sat = 'sat';
+            sun = 'sunday';
+
+            dayOWeek = [mon, tue, wed, thu, fri, sat, sun];
+
+            /* Get Item from Array */
+            console.log(dayOWeek[5]);
+            //dayOWeek[5] => dayOWeek 중에서 5번째 찾아주세요
+            //js index는 0부터 시작해서 sat이 5번째
+
+            //  Add one mor day to the array
+            dayOWeek.push('happyDay');
+            console.log(dayOWeek);
+            //.push는 항목 하나를 array 안에 추가해줌
+
+            const toBuy = ['치킨', '피자', '도넛'];
+            toBuy.push('김밥', '고추참치', '강아지사료');
+
+            console.log(toBuy);
+            // console.log(toBuy); =>전체 리스트가 보여짐
+            // console.log(toBuy[3]); =>전체 리스트중 3번째인 김밥이 보여짐
+        </script>
+    </body>
+</html>
