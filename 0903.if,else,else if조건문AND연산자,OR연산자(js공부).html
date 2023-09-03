@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const age2 = parseInt(prompt('너 몇살이니2'));
+
+            console.log(isNaN(age2));
+            //isNaN()함수에  argrument를 넣어주면 그 argumenut가 참인지 거짓인지 알려줌
+
+            /* part2  if,else*/
+            if (/* 조건식 */ isNaN(age2)) {
+                console.log('숫자를 써주세요');
+            } else {
+                console.log('고마워 너의 나이를 적어줘서');
+            }
+
+            /* part3 else if()*/
+            if (/* 조건식 */ isNaN(age2)) {
+                console.log('숫자를 써주세요');
+            } else if (age2 < 18) {
+                console.log('너는 어리구나?');
+            } else if (age2 >= 18 && age2 <= 50) {
+                /* &&(AND)연산자는 앞의 조건식과 뒤에 조건값이 ture인지를 확인하고 둘다 ture일때 값을 출력한다
+            ||(OR) 연산자는 둘중 하나만 ture 인지 확인하고 그 중 하나만 ture면 출력한다 
+            
+            true || true === true
+            false || true === true
+            true || false === true
+            false || false === false
+            
+            
+            */
+                console.log('너는 술을 마실수있어');
+            } else if (age2 > 50 && age2 <= 90) {
+                console.log('나이가 많으시네요 술을 당연히 드실수있어요');
+            }
+            /* else는 선택 사항  꼭 사용해야하는건 아님
+            else {
+                console.log('너는 술을 마실수 없어');
+            } */
+
+            // if (age2 < 20) {
+            //     console.log('술을 마실 수 없습니다');
+            // } else if (age2 >= 20) {
+            //     console.log('술을 마실 수 있습니다');
+            // }
+        </script>
+    </body>
+</html>
