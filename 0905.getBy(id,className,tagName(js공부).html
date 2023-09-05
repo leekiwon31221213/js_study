@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <h1 autofoucus id="title">getElementById</h1>
+
+        <h2 class="class">getElementsByClassName1</h2>
+        <h2 class="class">getElementsByClassName2</h2>
+        <h2 class="class">getElementsByClassName3</h2>
+
+        <div class="getElementsByTagName">
+            <h3>getElementsByClassName1</h3>
+            <h3>getElementsByClassName2</h3>
+            <h3>getElementsByClassName3</h3>
+        </div>
+        <script>
+            /* getElementById */
+            let getElementById = document.getElementById('title');
+            console.log(getElementById);
+            getElementById.innerText = '배고파';
+
+            /* getElementsByClassName */
+
+            const getElementsByClassName = document.getElementsByClassName('class');
+
+            console.log(getElementsByClassName);
+
+            /* getElementsByTagName */
+            /* getElementsByTagName 특정 태그명을 가진 요소들 찾기 */
+            let getElementsByTagName = document.getElementsByTagName('h3');
+            console.log(getElementsByTagName);
+
+            /* querySelector */
+            /* getElementsByTagName css방식으로 검색할 수 있음 */
+        </script>
+    </body>
+</html>

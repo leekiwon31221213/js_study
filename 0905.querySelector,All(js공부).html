@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="querySelector querySelectorAll">
+            <h2>우리집강아지1</h2>
+        </div>
+        <div class="querySelector querySelectorAll">
+            <h2>우리집강아지2</h2>
+        </div>
+        <div class="querySelector querySelectorAll">
+            <h2>우리집강아지3</h2>
+        </div>
+
+        <div class="querySelector querySelectorAll">
+            <h2>우리집강아지4</h2>
+        </div>
+        <script>
+            /* querySelector */
+            /* getElementsByTagName css방식으로 검색할 수 있음 */
+            /* 첫번째 엘리멘탈만 가져옴 */
+            let querySelector = document.querySelector('.querySelector h2');
+            console.log(querySelector);
+
+            let querySelectorAll = document.querySelectorAll('.querySelectorAll h2');
+            console.log(querySelectorAll);
+        </script>
+    </body>
+</html>
