@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="hello">
+            <h1>우리집 강아지</h1>
+        </div>
+        <script>
+            const title = document.querySelector('.hello h1');
+
+            //css 변경하기
+            title.style.color = 'blue';
+            //addEventListener() 이벤트 추가메소드
+
+            function handleTitleClick() {
+                title.style.color = 'red';
+                console.log('title was clicked!');
+            }
+            //위에 함수를 만들어서 클릭뒤 function자리에 만든 함수를 집어 넣어도 실행이 됨
+            title.addEventListener('click', handleTitleClick);
+        </script>
+    </body>
+</html>

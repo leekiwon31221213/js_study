@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="hello">
+            <h1>우리집 강아지</h1>
+        </div>
+        <script>
+            /* 더 많은 이벤트 */
+            //Window Event
+            const title = document.querySelector('.hello h1');
+
+            function handleWindowResize() {
+                document.body.style.backgroundColor = 'tomato';
+            }
+
+            //resize 이벤트는 브라우저 창이나 요소의 크기가 변경될 때 발생
+            window.addEventListener('resize', handleWindowResize);
+
+            /*
+            브라우저 & 윈도우 화면 높이 / 너비 구하는 법
+            window.innerWidth; // 브라우저 화면의 너비
+            window.innerHeight; // 브라우저 화면의 높이
+            window.outerWidth; // 브라우저 전체의 너비
+            window.outerHeight; // 브라우저 전체의 높이 */
+
+            //copy 이벤트 사용자가 브라우저의 사용자 인터페이스를 통해 복사했을 때 발생
+            function handleWindowCopy() {
+                alert('카피!!');
+            }
+            window.addEventListener('copy', handleWindowCopy);
+
+            //offline 이벤트 네트워크 연결이 끊긴 경우 또는 오프라인 상태에서 발생할 수 있는 이벤트에 대한 처리
+            function handleWindowOffLine() {
+                alert('SOS no WIFI');
+            }
+            window.addEventListener('offline', handleWindowOffLine);
+
+            //online  이벤트 네트워크가 온라인 상태에서 발생할 수 있는 이벤트
+            function handleWindowOnLine() {
+                alert('WIFI Connected ');
+            }
+            window.addEventListener('online', handleWindowOnLine);
+        </script>
+    </body>
+</html>
