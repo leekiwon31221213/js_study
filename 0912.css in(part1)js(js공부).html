@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="hello">
+            <h1>우리집 강아지</h1>
+        </div>
+        <script>
+            const h1 = document.querySelector('.hello h1');
+
+            function handleTitleClick() {
+                const currentColor = h1.style.color;
+                let newColor; // 변경 가능한 값을 newColor라 지정
+                if (
+                    //만약 currentColor == blue 일때 newColor는 토마토색이 되고
+                    currentColor === 'blue'
+                ) {
+                    newColor = 'tomato';
+                } else {
+                    //만약 아니면 newColor는 블루색이 된다
+                    newColor = 'blue';
+                }
+                //h1.style.color = newColor
+                h1.style.color = newColor;
+            }
+            h1.addEventListener('click', handleTitleClick);
+        </script>
+    </body>
+</html>

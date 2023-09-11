@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                background-color: blanchedalmond;
+            }
+            h1 {
+                color: cornflowerblue;
+                transition: color 0.5s ease-in-out;
+            }
+            .clicked {
+                color: tomato;
+            }
+            .font {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hello">
+            <h1 class="font">우리집 강아지</h1>
+            <h2 class="toggle">토글</h2>
+        </div>
+        <script>
+            //ClassList는 class들의 목록으로 작업할 수 있게끔 허용함
+            const h1 = document.querySelector('.hello h1');
+            const h2 = document.querySelector('.hello h2');
+
+            function handleTitleClick() {
+                const clickedClass = 'clicked';
+
+                if (h1.classList.contains(clickedClass)) {
+                    // .contains는  class를 포함하고 있는지 확인시켜줌
+                    h1.classList.remove(clickedClass);
+                    //.remove는 클래스이름을 지워줌
+                } else {
+                    h1.classList.add(clickedClass);
+                    //.add는 클래스추가함
+                }
+            }
+            /* toggle을 사용할 경우 handleTitleClick() 함수 코드를 안사용 해도 됨  => 코드를 줄일수 있음*/
+
+            function handleTitleClick2() {
+                h2.classList.toggle('clicked');
+                /* 
+                toggle은 classList에 "class(clicked)"가 이미 있는지 확인해서
+                clicked클래스가 있다면 제거해주고 없으면 추가 해줌
+                 */
+            }
+            h1.addEventListener('click', handleTitleClick);
+            h2.addEventListener('click', handleTitleClick2);
+        </script>
+    </body>
+</html>

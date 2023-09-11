@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                background-color: blanchedalmond;
+            }
+            h1 {
+                color: cornflowerblue;
+                transition: color 0.5s ease-in-out;
+            }
+            .clicked {
+                color: tomato;
+            }
+            .font {
+                color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hello">
+            <h1 class="font">우리집 강아지</h1>
+        </div>
+        <script>
+            //html에 클래스가 있지만 calssName은 그대로 class를 새로 교체해버림
+            //className을 변경 안하는게 좋음
+            const h1 = document.querySelector('.hello h1');
+
+            function handleTitleClick() {
+                //clicked 뒤에 font(class)를 추가하는방법도 있음
+                const clickedClass = 'clicked font';
+
+                if (h1.className === clickedClass) {
+                    h1.className = '';
+                    //" " 비워두는 이유: String이 아무것도 없어 리무브됨
+                } else {
+                    h1.className = clickedClass;
+                }
+            }
+            h1.addEventListener('click', handleTitleClick);
+        </script>
+    </body>
+</html>
