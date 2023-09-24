@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <ul>
+            <li class="fruit">apple</li>
+            <li class="fruit">banana</li>
+            <li class="fruit">pineapple</li>
+            <li class="fruit">grape</li>
+        </ul>
+
+        <ol class="hambergerMother1">
+            <li class="hamberger">불고기</li>
+            <li class="hamberger">치킨</li>
+            <li class="hamberger">통마늘</li>
+            <li class="hamberger">치즈스틱</li>
+            <li class="hamberger">더블불고기</li>
+            <li class="hamberger">치킨너겟</li>
+        </ol>
+
+        <ol class="hambergerMother2">
+            <li class="hamberger">불고기</li>
+            <li class="hamberger">치킨</li>
+            <li class="hamberger">통마늘</li>
+            <li class="hamberger">치즈스틱</li>
+            <li class="hamberger">더블불고기</li>
+            <li class="hamberger">치킨너겟</li>
+        </ol>
+
+        <script>
+            const fruit = ['apple', 'banana', 'pineapple', 'grape'];
+
+            for (let i = 0; i < fruit.length; i++) {
+                console.log(`이것은 ${fruit[i]}입니다.`);
+            }
+            // 결과값
+            // console.log(이것은 apple입니다.);
+            // console.log(이것은 banana입니다.);
+            // console.log(이것은 pineapple입니다.);
+            // console.log(이것은 grape입니다.);
+
+            fruit.forEach((e, i) => {
+                console.log(`이것은 idx=${i} ${e}입니다.`);
+            });
+            // 결과값
+            // console.log(`이것은 idx=0 apple입니다.`);
+            // console.log(이것은 idx=1 banana입니다.);
+            // console.log(이것은 idx=2 pineapple입니다.);
+            // console.log(이것은 idx=3 grape입니다.);
+
+            /* Array.from */
+            const fruitElement = document.querySelectorAll('.fruit');
+            Array.from(fruitElement).forEach((e, i) => {
+                e.classList.add('hi');
+            });
+
+            /* 예제 */
+            const hamberger = ['불고기', '치킨', '통마늘', '치즈스틱', '더블불고기', '치킨너겟'];
+            const price = ['500', '600', '800', '900', '1200', '1500', '1800'];
+            const habergertitle = [hamberger, price];
+
+            hamberger.forEach((e, i) => {
+                console.log(`이 메뉴는 ${e} 가격은 ${price[i]}입니다`);
+            });
+
+            /* 두개 묶어서 리스트를 만들때 */
+            const hambergerCommon = [
+                { menu: '불고기', price: '500원' },
+                { menu: '치킨', price: '600원' },
+            ];
+
+            //hambergerCommon[0].menu; 이렇게 하면 {}안에 index 0번인 불고기가 나옴
+            console.log(hambergerCommon[0].menu, hambergerCommon[0].price);
+
+            for (let i = 0; i < hamberger.length; i++) {
+                console.log(`이것의 메뉴는 ${hamberger[i]}고 이것의 가격은 ${price[i]}입니다.`);
+            }
+
+            //habergertitle = [hamberger, price]; 인덱스 0, 1
+            habergertitle[0][0]; //const hamberger에 index0 불고기
+            habergertitle[1][0]; // const price에 index0 500원
+
+            /* 예제 */
+            const hambergerMenu = document.querySelectorAll('.hamberger');
+            Array.from(hambergerMenu).forEach((e, i) => {
+                e.style.cssText = ` background-color:red;
+                   font-size:20px;
+                   font-weight:bold;`;
+            });
+        </script>
+    </body>
+</html>
