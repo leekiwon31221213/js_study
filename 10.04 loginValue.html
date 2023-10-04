@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-form">
+      <input type="text" placeholder="아이디를 입력해주세요" />
+      <button>로그인</button>
+    </div>
+    <script>
+      const loginInput = document.querySelector('.login-form input');
+      const loginButton = document.querySelector('.login-form button');
+      function onLoginBtnClick() {
+        console.dir('안녕하세요', loginInput.value); //dir 오브젝트를 확인가능
+      }
+      loginButton.addEventListener('click', onLoginBtnClick);
+    </script>
+  </body>
+</html>
