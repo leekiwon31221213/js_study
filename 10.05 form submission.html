@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-form">
+      <!-- required 필수항목 입력 -->
+      <input type="text" placeholder="아이디를 입력해주세요" />
+      <button>로그인</button>
+    </div>
+    <script>
+      const loginInput = document.querySelector('.login-form input');
+      const loginButton = document.querySelector('.login-form button');
+      function onLoginBtnClick() {
+        const username = loginInput.value;
+        if (username === '') {
+          alert('너의이름을적어줘');
+        } else if (username.length > 15) {
+          alert('이름이 15글자 이상입니다');
+        }
+      }
+      loginButton.addEventListener('click', onLoginBtnClick);
+    </script>
+  </body>
+</html>
