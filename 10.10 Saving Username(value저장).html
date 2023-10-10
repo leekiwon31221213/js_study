@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- required 필수항목 입력 -->
+    <form id="login-form">
+      <input type="text" placeholder="아이디를 입력해주세요" />
+      <input type="submit" value="로그인" />
+    </form>
+
+    <h1 id="greeting"></h1>
+    <script>
+      const loginInput = document.querySelector('#login-form input');
+      const loginForm = document.querySelector('#login-form');
+      const greeting = document.querySelector('#greeting');
+      const hidden_classname = 'hidden';
+
+      function onLoginSubmit(event) {
+        event.preventDefault(); //preventDefault() > 어떤 event의 기본 행동이든지 발생되지 않도록 막음
+        loginForm.classList.add(hidden_classname);
+        const username = loginInput.value;
+        localStorage.setItem('username', username);
+        greeting.innerText = `안녕 ${username}`;
+        greeting.classList.remove(hidden_classname);
+      }
+      loginForm.addEventListener('submit', onLoginSubmit);
+
+      //localStorage는 애플리케이션 왼쪽 패널에서 확인가능
+      //localStorage.setItem("username","기원") 을 활용하면 local storage에 정보를 저장을 할 수 있다
+      //localStorage.getItem("username"); 할당
+      //localStorage.removeItem("username"); 제거
+    </script>
+  </body>
+</html>
