@@ -18,6 +18,8 @@
     </form>
 
     <h1 id="greeting"></h1>
+    <!-- 12일 수업 -->
+    <h2 class="clock">00:00:00</h2>
     <script>
       const loginInput = document.querySelector('#login-form input');
       const loginForm = document.querySelector('#login-form');
@@ -38,6 +40,26 @@
       //localStorage.setItem("username","기원") 을 활용하면 local storage에 정보를 저장을 할 수 있다
       //localStorage.getItem("username"); 할당
       //localStorage.removeItem("username"); 제거
+
+      /* 12일 공부 */
+      /* interval 매번 일어나야하는 무언가를 말할때 사용 */
+      const clock = document.querySelector('.clock');
+      function getClock() {
+        const date = new Date();
+        clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+      }
+      //   setInterval는 두개의 argument를 받을 수 있음
+      //첫번째 argument는 실행하고자하는 함수(function)
+      //두번째 argument는 호출되는 간격을 몇 초로 할지 쓰면됨
+      getClock();
+      setInterval(getClock, 1000); //sayHello호출, 초 마다 호출
+
+      // setTimeout(sayHello, 5000);
+
+      /* 
+      setInterval:지정된 주기로 특정 코드를 실행
+      setTimeout:지정된 초가 지난 후 특정 코드를 1회 실행
+       */
     </script>
   </body>
 </html>
